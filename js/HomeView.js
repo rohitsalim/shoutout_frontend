@@ -6,13 +6,14 @@ var HomeView = function(store) {
 
   	this.render = function() {
   		this.el.html(HomeView.template());
+      //this.el.append(Handlebars.compile(""));
   		return this;
     };
 
     this.findByName = function() {
-        store.findByName($('.search-key').val(), function(employees) {
-            $('.employee-list').html(HomeView.liTemplate(employees));
-        });
+      //  store.findByName($('.search-key').val(), function(employees) {
+        //    $('.employee-list').html(HomeView.liTemplate(employees));
+        //});
     };
 
 	this.initialize();

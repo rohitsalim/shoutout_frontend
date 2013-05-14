@@ -22,25 +22,27 @@ var app = {
         var self = this;
 
         if (document.documentElement.hasOwnProperty('ontouchstart')) {
-            $('body').on('touchstart', 'a', function(event) {
+            $('body').on('touchstart', 'span', function(event) {
                 $(event.target).addClass('tappable-active');
                 console.log("You clicked on " + $(event.target));
+                console.log($(event.target));
                 var val = $(event.target).attr("data-val");
                 console.log($(event.target).attr("data-val"));
                 $('.search-key').val($('.search-bar').val() + val);
             }),
-            $('body').on('touchend', 'a', function(event) {
+            $('body').on('touchend', 'span', function(event) {
                 $(event.target).removeClass('tappable-active');
             });
         } else {
-            $('body').on('mousedown', 'a', function(event) {
+            $('body').on('mousedown', 'span', function(event) {
                 $(event.target).addClass('tappable-active');
                 console.log("You clicked on " + $(event.target));
+                console.log($(event.target));
                 var val = $(event.target).attr("data-val");
                 console.log($(event.target).attr("data-val"));
                 $('.search-key').val($('.search-bar').val() + val);
             });
-            $('body').on('mouseup', 'a', function(event) {
+            $('body').on('mouseup', 'span', function(event) {
                 $(event.target).removeClass('tappable-active');
             });
         }
